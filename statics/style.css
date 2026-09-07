@@ -1,0 +1,1494 @@
+/* =========================================================
+   MOHIT BANKING
+   COMPLETE STYLE SHEET
+   Homepage + Login + Register + Dashboard + Admin
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111827;
+    background: #f5f6f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   COMMON LOGO
+========================================================= */
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #5267d8;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   AUTH PAGES
+   LOGIN + REGISTER
+========================================================= */
+
+.auth-body {
+    min-height: 100vh;
+    background: #f4f6fa;
+}
+
+.auth-container {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+}
+
+
+/* ---------- LEFT SIDE ---------- */
+
+.auth-info {
+    background: #111827;
+    color: white;
+
+    padding: 45px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.auth-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.auth-logo h2 {
+    font-size: 19px;
+    line-height: 18px;
+}
+
+.auth-logo span {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.auth-info-content {
+    max-width: 430px;
+}
+
+.auth-label {
+    color: #9aa7ff;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.auth-info-content h1 {
+    font-size: clamp(55px, 6vw, 85px);
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+
+    margin: 18px 0 25px;
+}
+
+.auth-info-content p {
+    color: #aeb7c8;
+
+    max-width: 380px;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.auth-footer {
+    display: flex;
+    justify-content: space-between;
+
+    color: #7f8a9e;
+
+    font-size: 11px;
+}
+
+
+/* ---------- RIGHT SIDE ---------- */
+
+.auth-form-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+}
+
+.auth-form-box {
+    width: 100%;
+    max-width: 470px;
+}
+
+.register-box {
+    max-width: 550px;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+
+/* ---------- FORM HEADING ---------- */
+
+.form-heading {
+    margin-bottom: 30px;
+}
+
+.form-heading > span {
+    color: #5267d8;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.form-heading h2 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+
+    margin: 8px 0;
+}
+
+.form-heading p {
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* ---------- INPUT ---------- */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #dfe3ea;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: white;
+
+    font-size: 14px;
+
+    transition: .2s;
+}
+
+.input-group input:focus {
+    border-color: #5267d8;
+
+    box-shadow:
+        0 0 0 3px rgba(82, 103, 216, .08);
+}
+
+
+/* ---------- TWO INPUTS ---------- */
+
+.two-inputs {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* ---------- FORM OPTIONS ---------- */
+
+.form-options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 10px 0 22px;
+
+    font-size: 12px;
+}
+
+.remember {
+    display: flex;
+
+    gap: 7px;
+
+    align-items: center;
+}
+
+.form-options a,
+.register-link a {
+    color: #5267d8;
+
+    font-weight: bold;
+}
+
+
+/* ---------- BUTTON ---------- */
+
+.auth-submit {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #111827;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.auth-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(17, 24, 39, .15);
+}
+
+
+/* ---------- ERROR ---------- */
+
+.error-message {
+    padding: 12px 15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 9px;
+
+    background: #fff0f0;
+
+    color: #c62828;
+
+    font-size: 13px;
+}
+
+
+/* ---------- DEMO LOGIN ---------- */
+
+.demo-login {
+    margin-top: 20px;
+
+    padding: 16px;
+
+    border: 1px dashed #cfd5df;
+
+    border-radius: 10px;
+
+    background: #fafbfc;
+}
+
+.demo-login strong {
+    font-size: 12px;
+}
+
+.demo-login p {
+    color: #667085;
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+/* ---------- REGISTER LINK ---------- */
+
+.register-link {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #667085;
+
+    font-size: 13px;
+}
+
+.back-home {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 18px;
+
+    color: #667085;
+
+    font-size: 12px;
+}
+
+
+/* ---------- TERMS ---------- */
+
+.terms {
+    display: flex;
+
+    gap: 8px;
+
+    align-items: flex-start;
+
+    color: #667085;
+
+    font-size: 11px;
+
+    margin: 5px 0 20px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard-body {
+    min-height: 100vh;
+
+    background: #f5f6f9;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 250px;
+
+    height: 100vh;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 28px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    z-index: 50;
+}
+
+.sidebar-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 10px;
+}
+
+.sidebar-logo h2 {
+    font-size: 17px;
+
+    line-height: 17px;
+}
+
+.sidebar-logo span {
+    font-size: 11px;
+
+    color: #8c97aa;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.side-nav {
+    margin-top: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.side-nav a {
+    padding: 13px 14px;
+
+    border-radius: 9px;
+
+    color: #9ca7ba;
+
+    font-size: 13px;
+
+    display: flex;
+
+    gap: 13px;
+
+    align-items: center;
+
+    transition: .2s;
+}
+
+.side-nav a span {
+    width: 18px;
+
+    text-align: center;
+}
+
+.side-nav a:hover,
+.side-nav .side-active {
+    background: #283247;
+
+    color: white;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.help-card {
+    background: #1c2535;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+}
+
+.help-card strong {
+    font-size: 12px;
+}
+
+.help-card p {
+    color: #8995a8;
+
+    font-size: 10px;
+
+    margin: 5px 0 12px;
+}
+
+.help-card button {
+    width: 100%;
+
+    padding: 8px;
+
+    background: transparent;
+
+    border: 1px solid #39455b;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+}
+
+.logout-btn {
+    display: block;
+
+    padding: 12px;
+
+    border-top: 1px solid #293345;
+
+    color: #a4aec0;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DASHBOARD MAIN
+========================================================= */
+
+.dashboard-main {
+    margin-left: 250px;
+
+    padding: 35px 5%;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+.welcome-small {
+    color: #98a2b3;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.dashboard-header h1 {
+    font-size: 27px;
+
+    letter-spacing: -1px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.header-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.notification {
+    width: 40px;
+
+    height: 40px;
+
+    border: 1px solid #e1e4ea;
+
+    background: white;
+
+    border-radius: 10px;
+
+    position: relative;
+}
+
+.notification i {
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    background: #5267d8;
+
+    border-radius: 50%;
+
+    top: 8px;
+
+    right: 8px;
+}
+
+
+/* =========================================================
+   USER MINI PROFILE
+========================================================= */
+
+.user-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.user-mini strong,
+.user-mini span {
+    display: block;
+}
+
+.user-mini strong {
+    font-size: 12px;
+}
+
+.user-mini span {
+    color: #98a2b3;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.avatar {
+    width: 39px;
+
+    height: 39px;
+
+    border-radius: 50%;
+
+    background: #dfe4ff;
+
+    color: #5267d8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns: 1.6fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   BALANCE CARD
+========================================================= */
+
+.balance-card {
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background: #111827;
+
+    color: white;
+
+    min-height: 220px;
+}
+
+.balance-top {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.balance-top span,
+.balance-bottom small {
+    display: block;
+
+    color: #8995a8;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+}
+
+.balance-top h2 {
+    font-size: 36px;
+
+    margin-top: 10px;
+
+    letter-spacing: -1px;
+}
+
+.balance-icon {
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 12px;
+
+    background: #283247;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   BALANCE BOTTOM
+========================================================= */
+
+.balance-bottom {
+    border-top: 1px solid #30394a;
+
+    margin-top: 35px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.balance-bottom strong {
+    font-size: 12px;
+
+    display: block;
+
+    margin-top: 5px;
+}
+
+.balance-status {
+    display: flex;
+
+    gap: 7px;
+
+    align-items: center;
+
+    font-size: 11px;
+}
+
+.balance-status span {
+    width: 7px;
+
+    height: 7px;
+
+    background: #51c878;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   QUICK ACTION CARD
+========================================================= */
+
+.quick-card {
+    background: white;
+
+    border: 1px solid #e7e9ee;
+
+    border-radius: 18px;
+
+    padding: 30px;
+}
+
+.quick-card > span,
+.stat-card span,
+.section-top > div > span {
+    color: #98a2b3;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.quick-card h3 {
+    font-size: 22px;
+
+    margin: 10px 0 25px;
+}
+
+.quick-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.quick-buttons a {
+    border: 1px solid #e5e7eb;
+
+    padding: 12px;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+
+    text-align: center;
+
+    transition: .2s;
+}
+
+.quick-buttons a:hover {
+    border-color: #5267d8;
+
+    transform: translateY(-2px);
+}
+
+.quick-buttons b {
+    display: block;
+
+    font-size: 18px;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: white;
+
+    border: 1px solid #e7e9ee;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.stat-icon {
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 10px;
+
+    background: #eef0ff;
+
+    color: #5267d8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.stat-card span,
+.stat-card strong,
+.stat-card small {
+    display: block;
+}
+
+.stat-card strong {
+    font-size: 20px;
+
+    margin: 3px 0;
+}
+
+.stat-card small {
+    color: #98a2b3;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TRANSACTIONS CARD
+========================================================= */
+
+.transactions-card,
+.admin-table-card {
+    background: white;
+
+    border: 1px solid #e7e9ee;
+
+    border-radius: 17px;
+
+    padding: 25px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   SECTION TOP
+========================================================= */
+
+.section-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-top h2 {
+    font-size: 20px;
+
+    margin-top: 5px;
+}
+
+.section-top > a {
+    color: #5267d8;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   TRANSACTION ROW
+========================================================= */
+
+.transaction-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 15px 0;
+
+    border-top: 1px solid #f0f1f4;
+}
+
+.transaction-icon {
+    width: 39px;
+
+    height: 39px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-weight: bold;
+}
+
+.credit-icon {
+    background: #e9f8ef;
+
+    color: #198754;
+}
+
+.debit-icon {
+    background: #fff0f0;
+
+    color: #d64545;
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-info strong,
+.transaction-info span {
+    display: block;
+}
+
+.transaction-info strong {
+    font-size: 12px;
+}
+
+.transaction-info span {
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+.transaction-amount {
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.amount-credit {
+    color: #198754;
+}
+
+.amount-debit {
+    color: #d64545;
+}
+
+
+/* =========================================================
+   DASHBOARD FOOTER
+========================================================= */
+
+.dashboard-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #98a2b3;
+
+    font-size: 9px;
+
+    padding: 25px 0;
+}
+
+
+/* =========================================================
+   ADMIN PANEL
+========================================================= */
+
+.admin-badge {
+    padding: 7px 12px;
+
+    background: #fff0f0;
+
+    color: #c0392b;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ADMIN NOTICE
+========================================================= */
+
+.admin-notice {
+    background: #fffdf1;
+
+    border: 1px solid #f1e7af;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.notice-icon {
+    width: 30px;
+
+    height: 30px;
+
+    background: #f5e8a5;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-weight: bold;
+}
+
+.admin-notice strong {
+    font-size: 12px;
+}
+
+.admin-notice p {
+    font-size: 10px;
+
+    color: #777;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   ADMIN STATS
+========================================================= */
+
+.admin-stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.admin-stat {
+    background: white;
+
+    border: 1px solid #e7e9ee;
+
+    padding: 22px;
+
+    border-radius: 14px;
+}
+
+.admin-stat span,
+.admin-stat strong,
+.admin-stat small {
+    display: block;
+}
+
+.admin-stat span {
+    color: #98a2b3;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.admin-stat strong {
+    font-size: 25px;
+
+    margin: 7px 0;
+}
+
+.admin-stat small {
+    color: #198754;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   ADMIN BUTTONS
+========================================================= */
+
+.admin-action,
+.view-btn {
+    border: none;
+
+    background: #111827;
+
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 10px 14px;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.admin-action:hover,
+.view-btn:hover {
+    transform: translateY(-2px);
+
+    background: #283247;
+}
+
+
+/* =========================================================
+   ADMIN TABLE
+========================================================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+
+    color: #98a2b3;
+
+    font-size: 9px;
+
+    padding: 12px;
+
+    border-bottom: 1px solid #eee;
+}
+
+td {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #f0f1f4;
+
+    font-size: 11px;
+}
+
+.table-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.table-user strong,
+.table-user span {
+    display: block;
+}
+
+.table-user strong {
+    font-size: 11px;
+}
+
+.table-user span {
+    color: #98a2b3;
+
+    font-size: 9px;
+}
+
+.status {
+    padding: 5px 8px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: bold;
+}
+
+.active-status {
+    background: #e9f8ef;
+
+    color: #198754;
+}
+
+.pending-status {
+    background: #fff7df;
+
+    color: #a87900;
+}
+
+.view-btn {
+    padding: 7px 11px;
+}
+
+
+/* =========================================================
+   ADMIN PROFILE
+========================================================= */
+
+.admin-profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 5px 18px;
+}
+
+.admin-profile strong,
+.admin-profile span {
+    display: block;
+}
+
+.admin-profile strong {
+    font-size: 11px;
+}
+
+.admin-profile span {
+    color: #8995a8;
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   HOMEPAGE COMMON SECTIONS
+========================================================= */
+
+.container {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #5267d8;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+
+    margin: 10px 0;
+}
+
+.section-title p {
+    color: #667085;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* AUTH */
+
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-info {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        margin-bottom: 40px;
+    }
+
+    .mobile-logo h2 {
+        font-size: 18px;
+
+        line-height: 17px;
+    }
+
+    .mobile-logo span {
+        color: #98a2b3;
+
+        font-size: 11px;
+    }
+
+    .auth-form-area {
+        padding: 35px 20px;
+    }
+
+
+    /* SIDEBAR */
+
+    .sidebar {
+        width: 70px;
+
+        padding: 20px 10px;
+    }
+
+    .sidebar-logo > div:not(.logo-icon) {
+        display: none;
+    }
+
+    .sidebar-logo {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .side-nav a {
+        justify-content: center;
+    }
+
+    .side-nav a span {
+ 
