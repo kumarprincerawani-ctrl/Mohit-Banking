@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mohit Banking | Smart Digital Banking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">M</div>
+            <div>
+                <h2>Mohit</h2>
+                <span>Banking</span>
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="#features">Features</a>
+            <a href="#security">Security</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a href="/login" class="login-btn">
+            Login
+        </a>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-label">
+                ✦ SMARTER DIGITAL BANKING
+            </div>
+
+            <h1>
+                Banking that
+                <span>moves with you.</span>
+            </h1>
+
+            <p>
+                Experience a simple, modern and secure way to manage
+                your money. Everything you need, right at your fingertips.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/login" class="primary-btn">
+                    Open Dashboard →
+                </a>
+
+                <a href="#features" class="secondary-btn">
+                    Explore Features
+                </a>
+
+            </div>
+
+            <div class="trust">
+
+                <div class="trust-item">
+                    <strong>24/7</strong>
+                    <span>Access</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="trust-item">
+                    <strong>Secure</strong>
+                    <span>Platform</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="trust-item">
+                    <strong>Fast</strong>
+                    <span>Transfers</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= BANK CARD ================= -->
+
+        <div class="hero-card-area">
+
+            <div class="floating-card card-one">
+                <span>Available Balance</span>
+                <strong>₹1,25,680.50</strong>
+            </div>
+
+            <div class="bank-card">
+
+                <div class="card-top">
+
+                    <div class="chip"></div>
+
+                    <div class="card-symbol">
+                        ◉
+                    </div>
+
+                </div>
+
+                <div class="card-number">
+                    4582 &nbsp; 9214 &nbsp; 7632 &nbsp; 4582
+                </div>
+
+                <div class="card-bottom">
+
+                    <div>
+                        <small>CARD HOLDER</small>
+                        <p>MOHIT KUMAR</p>
+                    </div>
+
+                    <div>
+                        <small>VALID THRU</small>
+                        <p>09/29</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="floating-card card-two">
+
+                <div class="mini-icon">
+                    ↗
+                </div>
+
+                <div>
+                    <span>Monthly Savings</span>
+                    <strong>+12.8%</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features-section" id="features">
+
+        <div class="section-heading">
+
+            <span>WHAT WE OFFER</span>
+
+            <h2>
+                Everything you need,
+                <br>
+                in one place.
+            </h2>
+
+            <p>
+                Powerful banking tools designed to make everyday
+                money management easier.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <!-- FEATURE 1 -->
+
+            <div class="feature-box large-feature">
+
+                <div class="feature-icon">
+                    ₹
+                </div>
+
+                <h3>Smart Money Management</h3>
+
+                <p>
+                    Keep track of your balance and understand
+                    your spending with a clean and simple dashboard.
+                </p>
+
+                <a href="/dashboard">
+                    View Dashboard →
+                </a>
+
+            </div>
+
+
+            <!-- FEATURE 2 -->
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    ↗
+                </div>
+
+                <h3>Quick Transfers</h3>
+
+                <p>
+                    Send money quickly through our easy
+                    transfer interface.
+                </p>
+
+                <a href="/transfer">
+                    Transfer Money →
+                </a>
+
+            </div>
+
+
+            <!-- FEATURE 3 -->
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    ◷
+                </div>
+
+                <h3>Transaction History</h3>
+
+                <p>
+                    Review your recent banking activity
+                    whenever you need it.
+                </p>
+
+                <a href="/transactions">
+                    View Transactions →
+                </a>
+
+            </div>
+
+
+            <!-- FEATURE 4 -->
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    ♙
+                </div>
+
+                <h3>Personal Profile</h3>
+
+                <p>
+                    Manage your account information
+                    from your personal profile.
+                </p>
+
+                <a href="/profile">
+                    My Profile →
+                </a>
+
+            </div>
+
+
+            <!-- FEATURE 5 -->
+
+            <div class="feature-box">
+
+                <div class="feature-icon">
+                    ⚙
+                </div>
+
+                <h3>Easy Settings</h3>
+
+                <p>
+                    Customize your banking experience
+                    using simple account settings.
+                </p>
+
+                <a href="/settings">
+                    Open Settings →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SECURITY ================= -->
+
+    <section class="security-section" id="security">
+
+        <div class="security-content">
+
+            <div class="security-icon">
+                ✓
+            </div>
+
+            <span>BUILT WITH SECURITY IN MIND</span>
+
+            <h2>
+                Your digital banking,
+                <br>
+                your control.
+            </h2>
+
+            <p>
+                Mohit Banking is designed as a modern educational
+                banking interface with a focus on a clean and
+                secure user experience.
+            </p>
+
+            <div class="security-points">
+
+                <div>
+                    <b>✓</b>
+                    <span>Protected login interface</span>
+                </div>
+
+                <div>
+                    <b>✓</b>
+                    <span>Simple account management</span>
+                </div>
+
+                <div>
+                    <b>✓</b>
+                    <span>Responsive design</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="security-visual">
+
+            <div class="security-circle">
+
+                <div class="shield">
+                    ✓
+                </div>
+
+            </div>
+
+            <div class="security-tag tag-one">
+                🔒 Protected
+            </div>
+
+            <div class="security-tag tag-two">
+                ✓ Verified
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-card">
+
+            <span>ABOUT MOHIT BANKING</span>
+
+            <h2>
+                A simple idea:
+                <br>
+                make banking easier.
+            </h2>
+
+            <p>
+                Mohit Banking is a demonstration banking website
+                created to showcase a modern digital banking
+                experience.
+            </p>
+
+            <a href="/login" class="primary-btn">
+                Enter Banking →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div>
+
+            <span>READY TO GET STARTED?</span>
+
+            <h2>
+                Your banking journey
+                starts here.
+            </h2>
+
+        </div>
+
+        <a href="/login" class="cta-btn">
+            Login to Account →
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <div class="logo">
+                <div class="logo-icon">M</div>
+
+                <div>
+                    <h2>Mohit</h2>
+                    <span>Banking</span>
+                </div>
+            </div>
+
+            <p>
+                Modern digital banking experience.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div>
+                <h4>Navigation</h4>
+                <a href="/">Home</a>
+                <a href="#features">Features</a>
+                <a href="#security">Security</a>
+            </div>
+
+            <div>
+                <h4>Account</h4>
+                <a href="/login">Login</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/profile">Profile</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <div class="copyright">
+        © 2026 Mohit Banking. Educational demo website.
+    </div>
+
+
+</body>
+</html>

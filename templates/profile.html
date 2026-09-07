@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Profile - Mohit Banking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                M
+            </div>
+
+            <div>
+
+                <h2>Mohit</h2>
+
+                <span>Banking</span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="side-nav">
+
+            <a href="{{ url_for('dashboard') }}">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('transaction_page') }}">
+                <span>↔</span>
+                Transactions
+            </a>
+
+            <a href="{{ url_for('transfer') }}">
+                <span>➜</span>
+                Transfer
+            </a>
+
+            <a href="{{ url_for('profile') }}"
+               class="side-active">
+                <span>●</span>
+                Profile
+            </a>
+
+            <a href="{{ url_for('settings') }}">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <strong>Need Help?</strong>
+
+                <p>
+                    Contact our demo support team.
+                </p>
+
+                <button>
+                    Get Support
+                </button>
+
+            </div>
+
+
+            <a href="{{ url_for('logout') }}"
+               class="logout-btn">
+
+                ⇥ Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <span class="welcome-small">
+                    ACCOUNT
+                </span>
+
+                <h1>My Profile</h1>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="user-mini">
+
+                    <div>
+
+                        <strong>
+                            {{ user.name }}
+                        </strong>
+
+                        <span>
+                            {{ user.email }}
+                        </span>
+
+                    </div>
+
+
+                    <div class="avatar">
+                        M
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PROFILE CARD -->
+
+        <section class="transactions-card">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span>
+                        PERSONAL INFORMATION
+                    </span>
+
+                    <h2>
+                        Profile Details
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="avatar">
+                    M
+                </div>
+
+                <div class="transaction-info">
+
+                    <strong>
+                        {{ user.name }}
+                    </strong>
+
+                    <span>
+                        Demo Banking Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        First Name
+                    </strong>
+
+                    <span>
+                        {{ user.first_name }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Last Name
+                    </strong>
+
+                    <span>
+                        {{ user.last_name }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <span>
+                        {{ user.email }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Username
+                    </strong>
+
+                    <span>
+                        {{ user.username }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Account Number
+                    </strong>
+
+                    <span>
+                        {{ user.account }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <div class="demo-login">
+
+            <strong>
+                Demo Profile
+            </strong>
+
+            <p>
+                This profile contains sample information
+                for the Mohit Banking demonstration.
+            </p>
+
+        </div>
+
+
+        <footer class="dashboard-footer">
+
+            <span>
+                Mohit Banking Demo
+            </span>
+
+            <span>
+                Secure Demo Environment
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</body>
+</html>

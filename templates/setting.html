@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - Mohit Banking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                M
+            </div>
+
+            <div>
+
+                <h2>Mohit</h2>
+
+                <span>Banking</span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="side-nav">
+
+            <a href="{{ url_for('dashboard') }}">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('transaction_page') }}">
+                <span>↔</span>
+                Transactions
+            </a>
+
+            <a href="{{ url_for('transfer') }}">
+                <span>➜</span>
+                Transfer
+            </a>
+
+            <a href="{{ url_for('profile') }}">
+                <span>●</span>
+                Profile
+            </a>
+
+            <a href="{{ url_for('settings') }}"
+               class="side-active">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <strong>
+                    Need Help?
+                </strong>
+
+                <p>
+                    Contact our demo support team.
+                </p>
+
+                <button>
+                    Get Support
+                </button>
+
+            </div>
+
+
+            <a href="{{ url_for('logout') }}"
+               class="logout-btn">
+
+                ⇥ Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <span class="welcome-small">
+                    PREFERENCES
+                </span>
+
+                <h1>
+                    Settings
+                </h1>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="user-mini">
+
+                    <div>
+
+                        <strong>
+                            {{ user.name }}
+                        </strong>
+
+                        <span>
+                            {{ user.email }}
+                        </span>
+
+                    </div>
+
+
+                    <div class="avatar">
+                        M
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- GENERAL SETTINGS -->
+
+        <section class="transactions-card">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span>
+                        GENERAL
+                    </span>
+
+                    <h2>
+                        Account Settings
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Email Notifications
+                    </strong>
+
+                    <span>
+                        Receive demo account notifications
+                    </span>
+
+                </div>
+
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Transaction Alerts
+                    </strong>
+
+                    <span>
+                        Show alerts for demo transactions
+                    </span>
+
+                </div>
+
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Security Notifications
+                    </strong>
+
+                    <span>
+                        Receive demo security alerts
+                    </span>
+
+                </div>
+
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- SECURITY -->
+
+        <section class="transactions-card">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span>
+                        SECURITY
+                    </span>
+
+                    <h2>
+                        Security Settings
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Login Protection
+                    </strong>
+
+                    <span>
+                        Additional demo login protection
+                    </span>
+
+                </div>
+
+
+                <span class="status active-status">
+                    Enabled
+                </span>
+
+            </div>
+
+
+            <div class="transaction-row">
+
+                <div class="transaction-info">
+
+                    <strong>
+                        Two-Step Verification
+                    </strong>
+
+                    <span>
+                        Demo two-step verification
+                    </span>
+
+                </div>
+
+
+                <span class="status pending-status">
+                    Demo
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- DEMO NOTICE -->
+
+        <div class="demo-login">
+
+            <strong>
+                Demo Settings
+            </strong>
+
+            <p>
+                These settings are for the website
+                demonstration only and do not change
+                any real banking account.
+            </p>
+
+        </div>
+
+
+        <footer class="dashboard-footer">
+
+            <span>
+                Mohit Banking Demo
+            </span>
+
+            <span>
+                Secure Demo Environment
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</body>
+
+</html>

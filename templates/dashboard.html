@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Mohit Banking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="dashboard-body">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                M
+            </div>
+
+            <div>
+                <h2>Mohit</h2>
+                <span>Banking</span>
+            </div>
+
+        </div>
+
+
+        <nav class="side-nav">
+
+            <a href="/dashboard" class="side-active">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="/transactions">
+                <span>↔</span>
+                Transactions
+            </a>
+
+            <a href="/transfer">
+                <span>↑</span>
+                Transfer Money
+            </a>
+
+            <a href="/profile">
+                <span>♙</span>
+                My Profile
+            </a>
+
+            <a href="/settings">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <strong>
+                    Need Help?
+                </strong>
+
+                <p>
+                    We're here to help.
+                </p>
+
+                <button>
+                    Contact Support
+                </button>
+
+            </div>
+
+
+            <a href="/logout"
+               class="logout-btn">
+
+                ↪ &nbsp; Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <span class="welcome-small">
+                    YOUR FINANCIAL SPACE
+                </span>
+
+                <h1>
+                    Good evening, {{ user.name.split()[0] }} 👋
+                </h1>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button class="notification">
+                    ♧
+                    <i></i>
+                </button>
+
+                <div class="user-mini">
+
+                    <div class="avatar">
+                        M
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            {{ user.name }}
+                        </strong>
+
+                        <span>
+                            Personal Account
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- BALANCE AREA -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- BALANCE -->
+
+            <div class="balance-card">
+
+                <div class="balance-top">
+
+                    <div>
+                        <span>
+                            TOTAL AVAILABLE BALANCE
+                        </span>
+
+                        <h2>
+                            ₹{{ "{:,.2f}".format(user.balance) }}
+                        </h2>
+                    </div>
+
+                    <div class="balance-icon">
+                        ₹
+                    </div>
+
+                </div>
+
+
+                <div class="balance-bottom">
+
+                    <div>
+
+                        <small>
+                            Account Number
+                        </small>
+
+                        <strong>
+                            {{ user.account }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="balance-status">
+
+                        <span></span>
+
+                        Active
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTION -->
+
+            <div class="quick-card">
+
+                <span>
+                    QUICK ACTION
+                </span>
+
+                <h3>
+                    What would you like
+                    to do?
+                </h3>
+
+                <div class="quick-buttons">
+
+                    <a href="/transfer">
+                        <b>↑</b>
+                        Transfer
+                    </a>
+
+                    <a href="/transactions">
+                        <b>↔</b>
+                        History
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ↑
+                </div>
+
+                <div>
+
+                    <span>
+                        MONEY RECEIVED
+                    </span>
+
+                    <strong>
+                        ₹50,000
+                    </strong>
+
+                    <small>
+                        This month
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ↓
+                </div>
+
+                <div>
+
+                    <span>
+                        MONEY SPENT
+                    </span>
+
+                    <strong>
+                        ₹8,420
+                    </strong>
+
+                    <small>
+                        This month
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    #
+                </div>
+
+                <div>
+
+                    <span>
+                        TRANSACTIONS
+                    </span>
+
+                    <strong>
+                        24
+                    </strong>
+
+                    <small>
+                        This month
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRANSACTIONS -->
+
+        <section class="transactions-card">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span>
+                        RECENT ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent transactions
+                    </h2>
+
+                </div>
+
+                <a href="/transactions">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="transaction-list">
+
+                {% for transaction in transactions %}
+
+                <div class="transaction-row">
+
+                    <div class="transaction-icon
+                        {% if transaction.type == 'credit' %}
+                        credit-icon
+                        {% else %}
+                        debit-icon
+                        {% endif %}">
+
+                        {% if transaction.type == 'credit' %}
+                            ↑
+                        {% else %}
+                            ↓
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="transaction-info">
+
+                        <strong>
+                            {{ transaction.title }}
+                        </strong>
+
+                        <span>
+                            {{ transaction.date }}
+                        </span>
+
+                    </div>
+
+
+                    <div class="transaction-amount
+                        {% if transaction.type == 'credit' %}
+                        amount-credit
+                        {% else %}
+                        amount-debit
+                        {% endif %}">
+
+                        {% if transaction.type == 'credit' %}
+                            +
+                        {% else %}
+                            -
+                        {% endif %}
+
+                        ₹{{ "{:,.2f}".format(transaction.amount) }}
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                Mohit Banking • Educational Demo
+            </span>
+
+            <span>
+                Last updated: Today
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>

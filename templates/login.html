@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Mohit Banking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="auth-info">
+
+            <div class="auth-logo">
+                <div class="logo-icon">M</div>
+
+                <div>
+                    <h2>Mohit</h2>
+                    <span>Banking</span>
+                </div>
+            </div>
+
+            <div class="auth-info-content">
+
+                <span class="auth-label">
+                    DIGITAL BANKING
+                </span>
+
+                <h1>
+                    Welcome
+                    <br>
+                    back.
+                </h1>
+
+                <p>
+                    Manage your account, check your balance
+                    and explore your banking dashboard.
+                </p>
+
+            </div>
+
+            <div class="auth-footer">
+                <span>Secure Demo Platform</span>
+                <span>2026</span>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="auth-form-area">
+
+            <div class="auth-form-box">
+
+                <div class="mobile-logo">
+
+                    <div class="logo-icon">M</div>
+
+                    <div>
+                        <h2>Mohit</h2>
+                        <span>Banking</span>
+                    </div>
+
+                </div>
+
+                <div class="form-heading">
+
+                    <span>ACCOUNT LOGIN</span>
+
+                    <h2>Sign in to your account</h2>
+
+                    <p>
+                        Enter your details to continue.
+                    </p>
+
+                </div>
+
+
+                {% if error %}
+
+                <div class="error-message">
+                    {{ error }}
+                </div>
+
+                {% endif %}
+
+
+                <form method="POST"
+                      action="/login">
+
+                    <div class="input-group">
+
+                        <label>
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Enter username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                name="remember"
+                            >
+
+                            Remember me
+
+                        </label>
+
+                        <a href="#">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit">
+
+                        Login to Account →
+
+                    </button>
+
+                </form>
+
+
+                <div class="demo-login">
+
+                    <strong>Demo Login</strong>
+
+                    <p>
+                        Username: <b>mohit</b>
+                    </p>
+
+                    <p>
+                        Password: <b>1234</b>
+                    </p>
+
+                </div>
+
+
+                <div class="register-link">
+
+                    Don't have an account?
+
+                    <a href="/register">
+                        Create Account
+                    </a>
+
+                </div>
+
+
+                <a href="/" class="back-home">
+                    ← Back to Homepage
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

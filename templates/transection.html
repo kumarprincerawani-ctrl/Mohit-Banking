@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Mohit Banking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">M</div>
+
+            <div>
+                <h2>Mohit</h2>
+                <span>Banking</span>
+            </div>
+        </div>
+
+        <nav class="side-nav">
+
+            <a href="{{ url_for('dashboard') }}">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('transaction_page') }}"
+               class="side-active">
+                <span>↔</span>
+                Transactions
+            </a>
+
+            <a href="{{ url_for('transfer') }}">
+                <span>➜</span>
+                Transfer
+            </a>
+
+            <a href="{{ url_for('profile') }}">
+                <span>●</span>
+                Profile
+            </a>
+
+            <a href="{{ url_for('settings') }}">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+                <strong>Need Help?</strong>
+
+                <p>
+                    Contact our demo support team.
+                </p>
+
+                <button>Get Support</button>
+            </div>
+
+            <a href="{{ url_for('logout') }}"
+               class="logout-btn">
+                ⇥ Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+                <span class="welcome-small">
+                    ACCOUNT ACTIVITY
+                </span>
+
+                <h1>Transactions</h1>
+            </div>
+
+            <div class="header-right">
+
+                <button class="notification">
+                    🔔
+                </button>
+
+                <div class="user-mini">
+
+                    <div>
+                        <strong>{{ user.name }}</strong>
+                        <span>{{ user.email }}</span>
+                    </div>
+
+                    <div class="avatar">
+                        M
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- BALANCE -->
+        <div class="balance-card">
+
+            <div class="balance-top">
+
+                <div>
+                    <span>AVAILABLE BALANCE</span>
+
+                    <h2>
+                        ₹{{ "%.2f"|format(user.balance) }}
+                    </h2>
+                </div>
+
+                <div class="balance-icon">
+                    ₹
+                </div>
+
+            </div>
+
+            <div class="balance-bottom">
+
+                <div>
+                    <small>ACCOUNT</small>
+                    <strong>{{ user.account }}</strong>
+                </div>
+
+                <div class="balance-status">
+                    <span></span>
+                    Active
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRANSACTIONS -->
+        <section class="transactions-card">
+
+            <div class="section-top">
+
+                <div>
+                    <span>RECENT ACTIVITY</span>
+                    <h2>All Transactions</h2>
+                </div>
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+            </div>
+
+
+            <div class="transaction-list">
+
+                {% for transaction in transactions %}
+
+                <div class="transaction-row">
+
+                    <div class="transaction-icon
+                        {% if transaction.type == 'credit' %}
+                            credit-icon
+                        {% else %}
+                            debit-icon
+                        {% endif %}">
+
+                        {% if transaction.type == 'credit' %}
+                            ↓
+                        {% else %}
+                            ↑
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="transaction-info">
+
+                        <strong>
+                            {{ transaction.title }}
+                        </strong>
+
+                        <span>
+                            {{ transaction.date }}
+                        </span>
+
+                    </div>
+
+
+                    <div class="transaction-amount
+                        {% if transaction.type == 'credit' %}
+                            amount-credit
+                        {% else %}
+                            amount-debit
+                        {% endif %}">
+
+                        {% if transaction.type == 'credit' %}
+                            +₹{{ "%.2f"|format(transaction.amount) }}
+                        {% else %}
+                            -₹{{ "%.2f"|format(transaction.amount) }}
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+                {% else %}
+
+                <p>No transactions available.</p>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+            <span>Mohit Banking Demo</span>
+            <span>Secure Demo Environment</span>
+        </footer>
+
+    </main>
+
+</body>
+</html>

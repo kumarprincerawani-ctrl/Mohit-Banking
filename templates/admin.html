@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Panel | Mohit Banking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="dashboard-body">
+
+
+    <!-- ADMIN SIDEBAR -->
+
+    <aside class="sidebar admin-sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                M
+            </div>
+
+            <div>
+                <h2>Mohit</h2>
+                <span>Admin</span>
+            </div>
+
+        </div>
+
+
+        <nav class="side-nav">
+
+            <a href="/admin"
+               class="side-active">
+
+                <span>⌂</span>
+                Dashboard
+
+            </a>
+
+
+            <a href="#users">
+
+                <span>♙</span>
+                Users
+
+            </a>
+
+
+            <a href="#transactions">
+
+                <span>↔</span>
+                Transactions
+
+            </a>
+
+
+            <a href="#reports">
+
+                <span>▥</span>
+                Reports
+
+            </a>
+
+
+            <a href="#settings">
+
+                <span>⚙</span>
+                Settings
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-profile">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <span>
+                        Demo Access
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <a href="/" class="logout-btn">
+
+                ← Back to Website
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ADMIN MAIN -->
+
+    <main class="dashboard-main">
+
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <span class="welcome-small">
+                    ADMINISTRATION
+                </span>
+
+                <h1>
+                    Dashboard Overview
+                </h1>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="admin-badge">
+                    ADMIN MODE
+                </div>
+
+                <div class="avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WARNING -->
+
+        <div class="admin-notice">
+
+            <div class="notice-icon">
+                !
+            </div>
+
+            <div>
+
+                <strong>
+                    Demonstration Administration Panel
+                </strong>
+
+                <p>
+                    This panel displays sample banking
+                    management information for educational use.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <section class="admin-stats">
+
+
+            <div class="admin-stat">
+
+                <span>
+                    TOTAL USERS
+                </span>
+
+                <strong>
+                    1,248
+                </strong>
+
+                <small>
+                    ↑ 8.4% this month
+                </small>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <span>
+                    TOTAL TRANSACTIONS
+                </span>
+
+                <strong>
+                    18,642
+                </strong>
+
+                <small>
+                    ↑ 12.2% this month
+                </small>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <span>
+                    DEMO BALANCE
+                </span>
+
+                <strong>
+                    ₹8.42 Cr
+                </strong>
+
+                <small>
+                    Sample data
+                </small>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <span>
+                    ACTIVE USERS
+                </span>
+
+                <strong>
+                    934
+                </strong>
+
+                <small>
+                    74.8% of users
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- USER TABLE -->
+
+        <section class="admin-table-card"
+                 id="users">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span>
+                        USER MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Recent users
+                    </h2>
+
+                </div>
+
+                <button class="admin-action">
+                    + Add Demo User
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                USER
+                            </th>
+
+                            <th>
+                                ACCOUNT
+                            </th>
+
+                            <th>
+                                STATUS
+                            </th>
+
+                            <th>
+                                BALANCE
+                            </th>
+
+                            <th>
+                                ACTION
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-user">
+
+                                    <div class="avatar">
+                                        M
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Mohit Kumar
+                                        </strong>
+
+                                        <span>
+                                            mohit@example.com
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                XXXX 4582
+                            </td>
+
+                            <td>
+                                <span class="status active-status">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                ₹1,25,680
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-user">
+
+                                    <div class="avatar">
+                                        R
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Rahul Sharma
+                                        </strong>
+
+                                        <span>
+                                            rahul@example.com
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                XXXX 7821
+                            </td>
+
+                            <td>
+                                <span class="status active-status">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                ₹82,450
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-user">
+
+                                    <div class="avatar">
+                                        A
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Aman Verma
+                                        </strong>
+
+                                        <span>
+                                            aman@example.com
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                XXXX 3156
+                            </td>
+
+                            <td>
+                                <span class="status pending-status">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+                                ₹45,200
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIVITY -->
+
+        <section class="admin-table-card"
+                 id="transactions">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span>
+                        SYSTEM ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent transactions
+                    </h2>
+
+                </div>
+
+                <a href="/transactions">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="transaction-list">
+
+                <div class="transaction-row">
+
+                    <div class="transaction-icon credit-icon">
+                        ↑
+                    </div>
+
+                    <div class="transaction-info">
+
+                        <strong>
+                            Salary Credit
+                        </strong>
+
+                        <span>
+                            Mohit Kumar • Today
+                        </span>
+
+                    </div>
+
+                    <div class="amount-credit">
+                        + ₹45,000
+                    </div>
+
+                </div>
+
+
+                <div class="transaction-row">
+
+                    <div class="transaction-icon debit-icon">
+                        ↓
+                    </div>
+
+                    <div class="transaction-info">
+
+                        <strong>
+                            Online Purchase
+                        </strong>
+
+                        <span>
+                            Rahul Sharma • Today
+                        </span>
+
+                    </div>
+
+                    <div class="amount-debit">
+                        - ₹2,499
+                    </div>
+
+                </div>
+
+
+                <div class="transaction-row">
+
+                    <div class="transaction-icon credit-icon">
+                        ↑
+                    </div>
+
+                    <div class="transaction-info">
+
+                        <strong>
+                            Account Credit
+                        </strong>
+
+                        <span>
+                            Aman Verma • Yesterday
+                        </span>
+
+                    </div>
+
+                    <div class="amount-credit">
+                        + ₹8,000
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+
+            <span>
+                Mohit Banking • Admin Demo
+            </span>
+
+            <span>
+                System Status: Operational
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>

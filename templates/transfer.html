@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transfer - Mohit Banking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">M</div>
+
+            <div>
+                <h2>Mohit</h2>
+                <span>Banking</span>
+            </div>
+
+        </div>
+
+
+        <nav class="side-nav">
+
+            <a href="{{ url_for('dashboard') }}">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('transaction_page') }}">
+                <span>↔</span>
+                Transactions
+            </a>
+
+            <a href="{{ url_for('transfer') }}"
+               class="side-active">
+                <span>➜</span>
+                Transfer
+            </a>
+
+            <a href="{{ url_for('profile') }}">
+                <span>●</span>
+                Profile
+            </a>
+
+            <a href="{{ url_for('settings') }}">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <strong>Need Help?</strong>
+
+                <p>
+                    Contact our demo support team.
+                </p>
+
+                <button>Get Support</button>
+
+            </div>
+
+            <a href="{{ url_for('logout') }}"
+               class="logout-btn">
+                ⇥ Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <span class="welcome-small">
+                    MONEY TRANSFER
+                </span>
+
+                <h1>Transfer Money</h1>
+
+            </div>
+
+            <div class="header-right">
+
+                <div class="user-mini">
+
+                    <div>
+                        <strong>{{ user.name }}</strong>
+                        <span>{{ user.email }}</span>
+                    </div>
+
+                    <div class="avatar">
+                        M
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- BALANCE -->
+        <div class="balance-card">
+
+            <div class="balance-top">
+
+                <div>
+
+                    <span>AVAILABLE BALANCE</span>
+
+                    <h2>
+                        ₹{{ "%.2f"|format(user.balance) }}
+                    </h2>
+
+                </div>
+
+                <div class="balance-icon">
+                    ₹
+                </div>
+
+            </div>
+
+
+            <div class="balance-bottom">
+
+                <div>
+
+                    <small>ACCOUNT</small>
+
+                    <strong>
+                        {{ user.account }}
+                    </strong>
+
+                </div>
+
+                <div class="balance-status">
+
+                    <span></span>
+
+                    Active
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRANSFER FORM -->
+        <section class="transactions-card">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span>DEMO PAYMENT</span>
+
+                    <h2>Send Money</h2>
+
+                </div>
+
+            </div>
+
+
+            {% if message %}
+
+            <div class="error-message"
+                 style="background:#e9f8ef;color:#198754;">
+                {{ message }}
+            </div>
+
+            {% endif %}
+
+
+            {% if error %}
+
+            <div class="error-message">
+                {{ error }}
+            </div>
+
+            {% endif %}
+
+
+            <form method="POST">
+
+                <div class="input-group">
+
+                    <label>
+                        Recipient Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="recipient"
+                        placeholder="Enter recipient name"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        name="amount"
+                        placeholder="Enter amount"
+                        min="1"
+                        step="0.01"
+                        required>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Send Demo Money
+
+                </button>
+
+            </form>
+
+
+            <div class="demo-login">
+
+                <strong>Demo Notice</strong>
+
+                <p>
+                    This is only a simulated transfer.
+                    No real money will be transferred.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+
+            <span>
+                Mohit Banking Demo
+            </span>
+
+            <span>
+                Secure Demo Environment
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>
